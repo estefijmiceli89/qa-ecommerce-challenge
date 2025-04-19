@@ -1,0 +1,1 @@
+When adding a product for the first time and verifying the order history in profile page, you can see that for the first product does not contain the container for the image of the product with the general information

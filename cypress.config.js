@@ -1,31 +1,31 @@
-const { defineConfig } = require('cypress');
-const cucumber = require('cypress-cucumber-preprocessor').default;
+const { defineConfig } = require("cypress");
+const cucumber = require("cypress-cucumber-preprocessor").default;
 
 module.exports = defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
+  reporter: "cypress-mochawesome-reporter",
   reporterOptions: {
-    reportDir: 'cypress/reports/mochawesome',
+    reportDir: "cypress/reports/mochawesome",
     overwrite: true,
-    html: true,              
-    json: false,               
+    html: true,
+    json: false,
     embeddedScreenshots: true,
     inlineAssets: true,
     charts: true,
     code: false,
-    showCode: false
+    showCode: false,
   },
   e2e: {
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
-      on('file:preprocessor', cucumber());
+      require("cypress-mochawesome-reporter/plugin")(on);
+      on("file:preprocessor", cucumber());
       return config;
     },
-    specPattern: 'cypress/integration/**/*.feature',
-    baseUrl: 'http://localhost:3000/',
-    supportFile: 'cypress/support/e2e.js',
+    specPattern: "cypress/integration/step_definitions/**/*.ts",
+    baseUrl: "http://localhost:3000/",
+    supportFile: "cypress/support/e2e.js",
     video: false,
     screenshotOnRunFailure: true,
     experimentalRunAllSpecs: true,
-    testIsolation: false
+    testIsolation: false,
   },
 });
