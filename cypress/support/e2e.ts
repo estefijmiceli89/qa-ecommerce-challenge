@@ -1,4 +1,4 @@
-import 'cypress-cucumber-preprocessor/steps';
+import '@badeball/cypress-cucumber-preprocessor';
 import './commands';
 
 // Permitir que los tests continúen después de errores
