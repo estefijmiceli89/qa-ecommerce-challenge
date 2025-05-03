@@ -1,4 +1,4 @@
-Feature: Homepage Navigation
+Feature: Homepage Renderization
 
 Scenario: User can navigate to the homepage
   Given I am on the homepage

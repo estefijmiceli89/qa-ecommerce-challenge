@@ -20,7 +20,8 @@ module.exports = defineConfig({
       on('file:preprocessor', cucumber());
       return config;
     },
-    specPattern: 'cypress/integration/**/*.feature',
+    //specPattern: 'cypress/integration/**/*.feature',
+    specPattern: "cypress/integration/features/**/*.feature",
     baseUrl: 'http://localhost:3000/',
     supportFile: 'cypress/support/e2e.js',
     video: false,

@@ -7,3 +7,7 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
+
+Cypress.Commands.add('findByTestId', (testId) => {
+    return cy.get(`[data-testid="${testId}"]`);
+});
