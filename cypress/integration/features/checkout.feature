@@ -1,4 +1,4 @@
-Feature Product Checkout
+Feature: Product Checkout
   As a customer
   I want to be able to complete a purchase
   So that I can receive the products I selected
