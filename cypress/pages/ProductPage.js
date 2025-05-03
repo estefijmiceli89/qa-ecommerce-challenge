@@ -10,7 +10,8 @@ class ProductPage {
         addToCartButton: () => cy.findByTestId('add-to-cart'),
         backToProductsButton: () => cy.findByTestId('back-to-products'),
         quantityDropdown: () => cy.findByTestId('quantity-selector'),
-        addToCartButton: () => cy.findByTestId('add-to-cart')
+        addToCartButton: () => cy.findByTestId('add-to-cart'),
+        checkoutButton: () => cy.findByTestId('proceed-to-checkout')
     }
 
     goToDetailsProduct() {
@@ -51,6 +52,11 @@ class ProductPage {
 
     addToCart() {
         this.elements.addToCartButton()
+            .should('be.visible')
+            .click();
+    }
+    clickOnCheckout() {
+        this.elements.checkoutButton()
             .should('be.visible')
             .click();
     }

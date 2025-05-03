@@ -1,8 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
+import { Given, Then, And } from 'cypress-cucumber-preprocessor/steps';
 import HomePage from '../../pages/HomePage';
 import ProductPage from '../../pages/ProductPage';
 import CartPage from '../../pages/CartPage';
-import CheckoutPage from '../pages/CheckoutPage';
+import CheckoutPage from '../../pages/CheckoutPage';
 
 Given('I have products in my cart', () => {
     HomePage.visit();
@@ -12,10 +12,19 @@ Given('I have products in my cart', () => {
 
 });
 
-// When('I fill in the shipping information with valid data', () => {
-//     CheckoutPage.fillShippingInfo();
-// });
+When('I proceed to checkout, I should be on the checkout information page', () => {
+    ProductPage.clickOnCheckout();
+    CheckoutPage.initiateCheckoutProcess();
+});
 
-// When('I enter valid payment details', () => {
-//     CheckoutPage.fillPaymentInfo();
-// });
+Then('I fill in the shipping information with valid data', () => {
+    CheckoutPage.fillShippingInfo();
+});
+
+And('I enter valid payment details to place my order', () => {
+    CheckoutPage.fillPaymentInfo();
+});
+
+Then('I should see the order confirmation page', () => {
+
+});
