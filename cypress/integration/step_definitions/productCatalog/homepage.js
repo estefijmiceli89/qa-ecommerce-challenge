@@ -1,14 +1,14 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps';
-import HomePage from '../../pages/HomePage';
+import ProductCatalogPage from '../../../pages/productCatalog/productCatalog';
 
 Given('I am on the homepage', () => {
-    HomePage.visit();
+    ProductCatalogPage.visit();
 });
 
 Then('I should see the main content', () => {
-    HomePage.verifyMainContent();
+    ProductCatalogPage.verifyMainContent();
 });
 
 Then('I should see the full list of products', () => {
-    HomePage.verifyProductsGrid();
+    ProductCatalogPage.verifyProductsGrid();
 });
